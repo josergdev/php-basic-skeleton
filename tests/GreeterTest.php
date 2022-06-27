@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace JosergDev\Tests;
 
-use JosergDev\Example;
+use JosergDev\Greeter;
 use PHPUnit\Framework\TestCase;
 
-final class ExampleTest extends TestCase
+final class GreeterTest extends TestCase
 {
     /** @test */
     public function itShouldSayHelloWhenGreeting(): void
     {
-        $codelyber = new Example();
+        $example = new Greeter();
 
-        self::assertEquals("Hello!", $codelyber->greet());
+        self::assertEquals("Hello!", $example->greet());
     }
 }

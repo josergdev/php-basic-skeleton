@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace JosergDev;
 
-class Example
+class Greeter
 {
     public function greet(): string
     {
