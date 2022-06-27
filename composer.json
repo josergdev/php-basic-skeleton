@@ -1,5 +1,5 @@
 {
-  "name": "codelytv/php-bootstrap",
+  "name": "josergdev/php-bootstrap",
   "description": "Starting point if you want to bootstrap a project in PHP following best practices.",
   "type": "project",
   "keywords": ["bootstrap", "skeleton", "kata", "TDD", "boilerplate"],
@@ -7,12 +7,12 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "CodelyTV",
-      "homepage": "https://codely.tv"
+      "name": "josergdev php example",
+      "homepage": "https://joserg.dev"
     }
   ],
   "require": {
-    "php": "^7.4||^8.0"
+    "php": "^8.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.5",
@@ -20,12 +20,12 @@
   },
   "autoload": {
     "psr-4": {
-      "CodelyTv\\": "src/"
+      "JosergDev\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "CodelyTv\\Tests\\": "tests/"
+      "JosergDev\\Tests\\": "tests/"
     }
   },
   "minimum-stability": "stable",
