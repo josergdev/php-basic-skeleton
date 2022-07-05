@@ -32,4 +32,9 @@ class StringCalculatorTests extends TestCase
     {
         $this->assertEquals(45, $this->stringCalculator->add("1,2,3,4,5,6,7,8,9"));
     }
+
+    public function testItShouldAcceptNewLineAsSeparator(): void
+    {
+        $this->assertEquals(3, $this->stringCalculator->add("1\n2"));
+    }
 }

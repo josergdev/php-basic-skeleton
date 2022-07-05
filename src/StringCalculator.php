@@ -4,15 +4,38 @@ namespace JosergDev;
 
 class StringCalculator
 {
-    public function add(string $intNumbersList): int
+    public function add(string $numbers): int
     {
-        $strNumbersList = explode(',', $intNumbersList);
+        $separatedStringValues = $this->split($numbers);
 
-        $intNumbersList = array_map(
+        $separatedIntvalues = $this->parseToIntList($separatedStringValues);
+
+        return $this->sum($separatedIntvalues);
+    }
+
+    private function split(string $numbers): array
+    {
+        $separatedByComma = explode(",", $numbers);
+
+        $separatedByNewLine = [];
+        foreach ($separatedByComma as $value) {
+            $byNewLine = explode("\n", $value);
+            $separatedByNewLine = array_merge($separatedByNewLine, $byNewLine);
+        }
+
+        return $separatedByNewLine;
+    }
+
+    private function parseToIntList(array $numbers): array
+    {
+        return array_map(
             fn(string $number) => intval($number),
-            $strNumbersList
+            $numbers
         );
+    }
 
-        return array_sum($intNumbersList);
+    private function sum(array $numbers): int
+    {
+        return array_sum($numbers);
     }
 }
