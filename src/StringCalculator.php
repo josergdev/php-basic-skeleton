@@ -8,22 +8,32 @@ class StringCalculator
     {
         $separatedStringValues = $this->split($numbers);
 
-        $separatedIntvalues = $this->parseToIntList($separatedStringValues);
+        $separatedIntValues = $this->parseToIntList($separatedStringValues);
 
-        return $this->sum($separatedIntvalues);
+        return $this->sum($separatedIntValues);
     }
 
     private function split(string $numbers): array
     {
-        $separatedByComma = explode(",", $numbers);
+        $justNumbers = [$numbers];
 
-        $separatedByNewLine = [];
-        foreach ($separatedByComma as $value) {
-            $byNewLine = explode("\n", $value);
-            $separatedByNewLine = array_merge($separatedByNewLine, $byNewLine);
-        }
+        $byComma = $this->splitWith(',', $justNumbers);
+        $byNewLine = $this->splitWith("\n", $byComma);
 
-        return $separatedByNewLine;
+        return $byNewLine;
+    }
+
+    private function splitWith(string $delimiter, array $values): array
+    {
+        return array_reduce(
+            $values,
+            fn(array $carry, string $value) =>
+                array_merge(
+                    $carry,
+                    explode($delimiter, $value)
+                ),
+            []
+        );
     }
 
     private function parseToIntList(array $numbers): array

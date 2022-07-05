@@ -36,5 +36,6 @@ class StringCalculatorTests extends TestCase
     public function testItShouldAcceptNewLineAsSeparator(): void
     {
         $this->assertEquals(3, $this->stringCalculator->add("1\n2"));
+        $this->assertEquals(6, $this->stringCalculator->add("1\n2,3"));
     }
 }
