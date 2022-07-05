@@ -10,11 +10,10 @@ use PHPUnit\Framework\TestCase;
  */
 final class GreeterTest extends TestCase
 {
-    /** @test */
-    public function itShouldSayHelloWhenGreeting(): void
+    public function testItShouldSayHelloWhenGreeting(): void
     {
-        $example = new Greeter();
+        $greeter = new Greeter();
 
-        self::assertEquals("Hello!", $example->greet());
+        self::assertEquals("Hello!", $greeter->greet());
     }
 }
