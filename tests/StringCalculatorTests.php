@@ -27,4 +27,9 @@ class StringCalculatorTests extends TestCase
         $this->assertEquals(4, $this->stringCalculator->add("4"));
         $this->assertEquals(3, $this->stringCalculator->add("1,2"));
     }
+
+    public function testItShouldAcceptArbitraryNumberSize(): void
+    {
+        $this->assertEquals(45, $this->stringCalculator->add("1,2,3,4,5,6,7,8,9"));
+    }
 }
